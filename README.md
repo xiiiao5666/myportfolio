@@ -1,5 +1,3 @@
-Tentu! Berikut versi yang lebih mudah dipahami dari deskripsi proyek **MyPortfolio**—lebih santai, tetap informatif, dan cocok untuk ditampilkan di README GitHub atau dipresentasikan:
-
 ---
 
 # MyPortfolio
