@@ -1,0 +1,236 @@
+@layer base {
+    [data-theme='dark'] {
+      --background-color: rgb(30, 30, 30); 
+      --text-color: #ffffff; 
+      --navbar-bg: rgba(30, 30, 30, 0.9); 
+      --navbar-text: #ffffff; 
+      --navbar-hover: #dddddd; 
+      --navbar-link-hover: #ffffff; 
+      --box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.116); 
+      --hero-gradient: linear-gradient(135deg, #1c1c1c 20%, #2B2D4D 50%, #516A8D 80%); 
+      --portfolio-gradient: linear-gradient(135deg, #1c1c1c 20%, #2B2D4D 50%, #516A8D 80%); 
+      --input-bg-color: #1f2937;
+      --input-border-color: #374151;
+    }
+
+    [data-theme='light'] {
+      --background-color: #F2F2F2; 
+      --text-color: #000000; 
+      --navbar-bg: rgba(242, 242, 242, 0.9); 
+      --navbar-text: #000000; 
+      --navbar-hover: #555555; 
+      --navbar-link-hover: #000000; /* Tetap sama */
+      --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Tetap sama */
+      --hero-gradient: linear-gradient(135deg, #f2f2f2 20%, #99e6e6 50%, #66cccc 80%); /* Tetap sama */
+      --hero-title: #000000; /* Tetap sama */
+      --portfolio-gradient: linear-gradient(135deg, #f2f2f2 20%, #99e6e6 50%, #66cccc 80%); /* Tetap sama */
+      --input-bg-color: #f9fafb;
+      --input-border-color: #d1d5db;
+    }
+
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+  }
+}
+
+/* Navbar Styling */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(12px);
+  color: var(--navbar-text);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  z-index: 50;  
+  box-shadow: var(--box-shadow);
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--navbar-text);
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.08);
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* Navbar Links (Desktop) */
+.navbar-menu {
+  display: flex;
+  gap: 2rem; /* Memberikan jarak lebih longgar antar menu */
+  padding: 0 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.navbar-link {
+  font-size: 1.2rem;
+  color: var(--navbar-text);
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.navbar-link:hover {
+  color: var(--navbar-link-hover);
+  transform: scale(1.05);
+}
+
+/* Hamburger Button Styling (Mobile Only) */
+.hamburger-btn {
+  display: none; /* Sembunyikan tombol hamburger di desktop */
+  font-size: 2rem;
+  color: var(--navbar-text);
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  padding: 10px;
+}
+
+.hamburger-btn svg {
+  width: 28px; 
+  height: 28px;
+}
+
+/* Show hamburger button only on mobile */
+@media (max-width: 639px) {
+  .hamburger-btn {
+    display: block; /* Tampilkan hamburger hanya di layar kecil */
+    font-size: 2rem;
+    margin-left: auto;
+    margin-right: 18px;
+  }
+
+  .navbar-menu {
+    display: none; /* Menyembunyikan menu navbar di mobile */
+  }
+  
+  .navbar-actions {
+    position: relative;
+  }
+}
+
+/* Mobile Menu Styling */
+.mobile-menu {
+  background-color: var(--navbar-bg);
+  padding: 1rem 1.5rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 0; /* Pastikan margin-top diatur ke 0 */
+  border-radius: 10px;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease-in-out;
+  display: flex; /* Menggunakan flexbox untuk menyusun menu */
+  flex-direction: column; /* Menyusun elemen secara vertikal */
+  position: absolute; /* Mengatur posisi menjadi absolute */
+  top: 60px; /* Menyesuaikan dengan tinggi navbar */
+  left: 0; /* Menyelaraskan ke kiri */
+  right: 0; /* Menyelaraskan ke kanan */
+  z-index: 60; /* Pastikan menu berada di atas elemen lain */
+}
+
+.mobile-menu.hidden {
+  display: none;
+}
+
+.mobile-menu-link {
+  display: block;
+  font-size: 1.125rem;
+  padding: 0.6rem 0; /* Padding vertikal untuk jarak antar link */
+  color: var(--navbar-text);
+  transition: color 0.1s ease-in-out, transform 0.1s ease-in-out;
+  text-decoration: none;
+}
+
+.mobile-menu-link:last-child {
+  border-bottom: none; /* Menghapus garis bawah pada link terakhir */
+}
+
+.mobile-menu-link:hover {
+  color: var(--navbar-link-hover);
+  transform: scale(1.08);
+}
+/* Theme Toggle Button (Desktop and Mobile) */
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Show Theme Toggle in Desktop Navbar */
+.theme-toggle-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile Menu: Move Theme Toggle to Inside Menu */
+.mobile-theme-toggle {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .theme-toggle-desktop {
+    display: none; /* Menyembunyikan tombol Theme Toggle di desktop */
+  }
+
+  .mobile-theme-toggle {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

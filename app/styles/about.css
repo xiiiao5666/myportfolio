@@ -1,0 +1,365 @@
+/* About Page Styles */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  color: var(--text-color);
+  margin-top: 20px;
+  position: relative;
+  z-index: 1
+}
+.about-section {
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+
+.about-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hero-gradient);
+  text-align: center;
+  overflow: hidden;
+  padding: 2rem;
+  transition: background 0.5s ease-in-out;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(30, 30, 30, 0) 100%);
+          mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(30, 30, 30, 0) 100%);
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.6) 100%);
+  mix-blend-mode: overlay;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: left;
+}
+
+.about-hero-image {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-hero-image img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.about-hero-text {
+  flex: 2;
+  min-width: 280px;
+  margin-left: 30px;
+}
+
+.about-hero-text h2 {
+  font-size: 40px;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+}
+
+.about-hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+  .profile-img {
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    object-fit: cover;
+  }
+  
+  .timeline {
+    position: relative;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--background-color);
+    max-width: 1000px;
+    margin-left: 170px;
+    margin-right: auto;
+  }
+  
+ /* Timeline Header Rapi Tengah */
+.timeline-header {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-top: 180px;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-left: 80px;
+}
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 32px;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #7f8c8d, #3498db);
+    border-radius: 10px;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 4rem;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 16px;
+    height: 16px;
+    background-color: #3498db;
+    border: 3px solid var(--background-color);
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.3);
+    margin-top: 90px;
+  }
+  
+  .timeline-card {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .timeline-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .timeline-title {
+    font-weight: 700;
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+  }
+  
+  .timeline-year {
+    font-size: 0.95rem;
+    color: rgb(146, 146, 146);
+    text-align: left;
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+  
+  .timeline-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+  
+  .experience-section {
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .experience-header {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .experience-card {
+    background-color: rgba(52, 152, 219, 0.07);
+    border-left: 5px solid #3498db;
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+  
+  .experience-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.1);
+  }
+  
+  @media screen and (max-width: 640px) {
+    @media screen and (max-width: 640px) {
+      .about-hero-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        padding: 0 1rem;
+        height: 900px;
+      }
+    
+      .about-hero-text{
+        min-width: 100%;
+        margin-bottom: 30px;
+        margin-left: 0px;
+        padding-bottom: 20px;
+      }
+
+      .about-hero-image{
+        min-width: 100%;
+        margin-top: 80px;
+      }
+    }
+  
+  
+    .about-hero-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .about-hero-text {
+      min-width: auto;
+    }
+  
+    .about-hero-text h2 {
+      font-size: 28px;
+      text-align: center;
+    }
+  
+    .about-hero-text p {
+      font-size: 16px;
+      text-align: justify;
+    }
+  
+    .about-hero-image img {
+      max-width: 100%;
+      margin: 0;
+    }
+  
+    .timeline {
+      margin: 2rem auto 0 auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  
+    .timeline-header {
+      font-size: 2rem;
+      margin: 60px 0 1rem 0;
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .timeline::before {
+      left: 20px;
+    }
+  
+    .timeline-dot {
+      display: none;
+    }
+  
+    .timeline-item {
+      padding-left: 2rem;
+    }
+  
+    .timeline-title {
+      font-size: 1.4rem;
+      text-align: left;
+    }
+  
+    .timeline-year,
+    .timeline-desc {
+      text-align: left;
+    }
+  
+    .experience-list {
+      padding: 0 1rem;
+    }
+  
+    .experience-card {
+      margin-left: 0;
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+  
+    .experience-header {
+      font-size: 2rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .about-hero-text h2 {
+      font-size: 24px;
+    }
+  
+    .about-hero-text p {
+      font-size: 14px;
+      text-align: center;
+    }
+  
+    .timeline-title {
+      font-size: 1.2rem;
+    }
+  
+    .timeline-desc {
+      font-size: 0.9rem;
+    }
+  
+    .experience-card {
+      font-size: 0.9rem;
+      padding: 1rem;
+    }
+  }
+  

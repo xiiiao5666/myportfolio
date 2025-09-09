@@ -1,0 +1,45 @@
+/* Footer Styling */
+.footer {
+    padding: 1rem; /* Padding lebih kecil */
+    text-align: center;
+    font-size: 1rem; /* Ukuran font lebih kecil */
+    background-color: var(--footer-bg-light);
+    color: var(--footer-text-light);
+  }
+  
+  .footer a {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .footer a:hover {
+    transform: scale(1.05);
+  }
+  
+  .footer .footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem; /* Mengurangi jarak antar ikon */
+    margin-top: 0.25rem; /* Memberikan jarak yang lebih kecil antara teks dan ikon */
+  }
+  
+  .footer .footer-icons a {
+    color: inherit;
+  }
+  
+  .footer .footer-icons a:hover {
+    color: var(--footer-link-hover-light);
+  }
+  
+  /* Dark Theme */
+  [data-theme='dark'] .footer {
+    background-color: var(--footer-bg-dark);
+    color: var(--footer-text-dark);
+  }
+  
+  [data-theme='dark'] .footer .footer-icons a:hover {
+    color: var(--footer-link-hover-dark);
+  }
+  

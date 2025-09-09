@@ -1,0 +1,256 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('/public/fonts/fonnts.com-Poppins-Bold.ttf') format('.ttf');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/public/fonts/fonnts.com-Poppins-Regular.ttf') format('.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/public/fonts/fonnts.com-Poppins-ExtraLightItalic.ttf') format('.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* General Styles */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: var(--hero-gradient);
+  transition: background 0.5s ease-in-out;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(30, 30, 30, 0) 100%);
+   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(30, 30, 30, 0) 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.6) 100%);
+  mix-blend-mode: overlay;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Atur tinggi sesuai kebutuhan */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--background-color) 100%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 20px; /* Tambahkan padding untuk mobile */
+}
+
+.hero-myname {
+  font-size: 25px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  margin-bottom: -3rem;
+  color: var(--navbar-hover);
+  text-align: left;
+  margin-top: 20px;
+}
+
+.hero-title {
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--text-color);
+  text-align: left;
+}
+
+._line_x8c4c_183 {
+  flex-grow: 1; /* Membuat garis memanjang ke sisa ruang */
+  height: 2px; /* Ketebalan garis */
+  background-color: var(--navbar-text); /* Warna garis */
+  margin-left: 10px; /* Memberikan jarak antara teks dan garis */
+  transition: width 0.3s ease; /* Efek animasi perubahan lebar */
+  width: 0; /* Mulai dengan lebar nol */
+  margin-top: 140px;
+}
+
+._line_x8c4c_183[data-status="entered"] {
+  width: 90%; /* Memperpanjang garis ketika status "entered" */
+}
+
+.hero-subtitle {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--navbar-hover);
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  text-align: left;
+  margin-top: -30px;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 640px) {
+  .hero {
+    height: 150vh; /* Mengurangi tinggi hero untuk mobile */
+  }
+
+  .hero-title {
+    font-size: 3rem; /* Mengurangi ukuran font untuk mobile */
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .hero-myname {
+    font-size: 25px; /* Mengurangi ukuran font untuk mobile */
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-top: -150px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem; /* Mengurangi ukuran font untuk mobile */
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  ._line_x8c4c_183 {
+    display: none;
+  }
+
+  .cta-button {
+    padding: 0.5rem 1rem; /* Mengurangi padding untuk mobile */
+    font-size: 1rem; /* Mengurangi ukuran font untuk mobile */
+    margin-bottom: 20px;
+  }
+}
+
+/* Styles untuk .about Section */
+.about {
+  padding: 2rem; /* Ruang di sekitar section */
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap; /* Agar elemen dalam .about-container bisa berbaris ke bawah pada layar kecil */
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto; /* Menyelaraskan konten di tengah */
+}
+
+.about-text {
+  flex: 1;
+  margin-right: 2rem;
+  margin-left: 50px;
+}
+
+.about-image {
+  flex: 1;
+  margin-left: 150px;
+}
+
+/* Responsif untuk gambar pada layar lebih kecil */
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.about h2 {
+  font-size: 40px;
+  color: var(--text-color);
+  font-weight: 700;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+}
+
+.about p {
+  font-size: 18px;
+  text-align: justify;
+  letter-spacing: 0.7px;
+  line-height: 1.5;
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+
+/* Responsivitas: Menyesuaikan dengan layar kecil (mobile) */
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Mengubah tata letak menjadi kolom */
+    text-align: center; /* Menyelaraskan teks ke tengah */
+  }
+
+  .about-text {
+    margin-right: 0; /* Menghapus margin pada teks agar lebih rapat */
+    margin-left: 0;
+  }
+
+  .about-image {
+    margin-left: 0; /* Menghapus margin kiri pada gambar */
+    margin-top: 20px; /* Memberikan jarak antara teks dan gambar */
+  }
+
+  .about h2 {
+    font-size: 30px; /* Menurunkan ukuran font agar lebih kecil pada layar kecil */
+  }
+
+  .about p {
+    font-size: 20px; /* Menurunkan ukuran font agar lebih kecil pada layar kecil */
+  }
+}
+
+/* Responsivitas untuk ukuran lebih kecil (mobile) */
+@media screen and (max-width: 480px) {
+
+  .about h2 {
+    font-size: 24px; /* Menurunkan ukuran font lebih kecil */
+  }
+
+  .about p {
+    font-size: 14px;
+  }
+}
+
+
+

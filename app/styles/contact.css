@@ -1,0 +1,218 @@
+/* === Contact Page Styling === */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.portfolio-page {
+  padding: 4rem 1rem;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  background: var(--hero-gradient);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 95%, rgba(30, 30, 30, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 95%, rgba(30, 30, 30, 0) 100%);
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.portfolio-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-header p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* === Shared Box Style === */
+.section-box {
+  background-color: var(--navbar-bg);
+  padding: 2rem;
+  border-radius: 1.25rem;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2.5rem;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  
+}
+
+/* === Section Title === */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* === Form === */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-input,
+textarea {
+  padding: 0.75rem 1rem;
+  background-color: var(--input-bg-color, #1f2937);
+  color: var(--text-color);
+  border: 1px solid var(--input-border-color, #374151);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+.form-input:focus,
+textarea:focus {
+  border-color: #06b6d4;
+}
+
+/* === Button === */
+.form-button {
+  background-color: #06b6d4;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #0891b2;
+}
+
+/* === Comment Section === */
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.comment {
+  background-color: var(--navbar-bg);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #374151;
+  transition: background-color 0.3s ease;
+  box-shadow: var(--box-shadow);
+}
+
+.comment-name {
+  font-weight: 600;
+  color: #1c7eff;
+  margin-bottom: 0.25rem;
+}
+
+.comment-text {
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* === Rating Stars === */
+.rating-box {
+  background-color: var(--navbar-bg);
+  padding: 2rem;
+  border-radius: 1.25rem;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  margin-top: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 30px;
+}
+
+.rating-stars {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.star-icon {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  color: #6b7280; /* abu default */
+  transition: color 0.3s ease-in-out, transform 0.2s;
+}
+
+.star-icon:hover {
+  transform: scale(1.1);
+}
+
+.star-active {
+  color: #facc15; /* kuning saat aktif */
+}
+
+.rating-list  {
+  margin-right: 4px;
+  padding-bottom: 10px;
+}
+
+.rating-name {
+  font-weight: 600;
+  color: #1c7eff;
+  margin-bottom: 0.25rem;
+}
+
+.fa-star {
+  margin-bottom: 10px;
+}
+
+/* === Comment Card (Rating with Nama) === */
+.comment-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background-color: var(--background-color);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #374151;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+  margin-top: 9px;
+}
+
+/* === Responsive === */
+@media (max-width: 640px) {
+  .portfolio-header h1 {
+    font-size: 2rem;
+  }
+
+  .section-box {
+    padding: 1.5rem;
+  }
+
+  .form-input,
+  .form-button,
+  textarea {
+    font-size: 0.95rem;
+  }
+
+  .rating-stars {
+    justify-content: center;
+  }
+
+  .comment-card {
+    padding: 0.75rem;
+  }
+}
